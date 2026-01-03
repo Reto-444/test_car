@@ -1,0 +1,198 @@
+/* ===== КАТАЛОГ АВТОМОБИЛЕЙ ===== */
+
+
+/* Главный контейнер каталога */
+
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+    padding: 20px;
+}
+
+
+/* Карточка автомобиля */
+
+.car-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e9e9e9;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Эффект при наведении */
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #1a237e;
+}
+
+
+/* Заголовок автомобиля */
+
+.car-card h3 {
+    color: #1a237e;
+    font-size: 24px;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f0f0f0;
+    font-weight: 700;
+}
+
+
+/* Параметры автомобиля */
+
+.car-card p {
+    color: #444;
+    margin: 10px 0;
+    font-size: 16px;
+    padding-left: 25px;
+    position: relative;
+}
+
+
+/* Иконки перед параметрами */
+
+.car-card p:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background: #1a237e;
+    border-radius: 50%;
+}
+
+.car-card p:nth-child(2):before {
+    background: #4CAF50;
+}
+
+
+/* Год - зеленый */
+
+.car-card p:nth-child(3):before {
+    background: #FF9800;
+}
+
+
+/* Цена - оранжевый */
+
+.car-card p:nth-child(4):before {
+    background: #2196F3;
+}
+
+
+/* Цвет - синий */
+
+
+/* Цена */
+
+.price {
+    font-size: 32px;
+    font-weight: 900;
+    color: #1a237e;
+    margin: 20px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #e3e6ff;
+}
+
+
+/* Кнопка Заказать */
+
+.btn-order {
+    display: block;
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    color: white;
+    padding: 16px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(26, 35, 126, 0.2);
+}
+
+.btn-order:hover {
+    background: linear-gradient(135deg, #283593 0%, #3949ab 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(26, 35, 126, 0.3);
+}
+
+
+/* Сообщение для неавторизованных */
+
+.car-card>p:last-child {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px dashed #e0e0e0;
+    font-size: 15px;
+    color: #666;
+}
+
+.car-card>p:last-child a {
+    color: #1a237e;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    padding: 0 5px 2px;
+}
+
+.car-card>p:last-child a:hover {
+    color: #283593;
+    border-bottom-color: #283593;
+}
+
+
+/* Адаптивность */
+
+@media (max-width: 768px) {
+    .catalog {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 15px;
+    }
+    .car-card {
+        padding: 20px;
+    }
+    .car-card h3 {
+        font-size: 22px;
+    }
+    .price {
+        font-size: 28px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    .car-card {
+        padding: 18px;
+    }
+    .btn-order {
+        padding: 14px 25px;
+        font-size: 16px;
+    }
+}
